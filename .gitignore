@@ -116,7 +116,7 @@ typings/
 
 #css files
 
-*.scss
+#*.scss
 *.scss.map
 *.css.map
 

@@ -1,0 +1,226 @@
+@mixin mediaQuery767_479 {
+	@media (max-width: 767px) and (min-width: 479px) {
+	
+	body {
+	font-size: 14px;
+	}
+
+	h2 {
+	font-size: 20px;
+	padding-bottom: 17px;
+	}
+	
+	section {
+		.container {
+			margin: 40px auto;
+			text-align: center;
+		}
+	}
+	
+	.logo {
+	display: block;
+	margin: 0 auto;
+	height: 40px;
+	}
+
+	header {
+		height: 280px;
+		nav {	
+			ul {
+				float: none;
+		
+				li {
+					display: block;
+					padding: 2px 0;
+					a {
+						width: 300px;
+						padding: 2px 0;
+						margin: 0 auto;
+						height: 40px;
+						line-height: 40px;
+						padding: 0 5px;
+						border: 1px solid white;
+						&:hover {
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+
+		/* HERO*/
+	
+	.hero {
+		height: 240px;
+		background-size: 135%;
+	
+	
+		h1 {
+			display: block;
+			float: none;
+			width: 100vw;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			font-size: 18px;
+			padding:0;
+			margin-top: 0;
+			border: none;
+		}
+	}	
+
+/* THREE ICONS SECTION */
+
+	.icon-3 {
+		padding: 0 70px;
+		.icon-3 a i {
+			font-size: 40px;
+			width: 80px;
+			height: 80px;
+			line-height: 80px;
+		}
+
+		h3 {
+		font-size: 13px;
+		color: black;
+		padding: 20px 0;	
+		}
+	}
+	
+	/* FEATURED WORKS*/
+
+	.feat_works {
+
+	padding: 0 80px;
+	}
+
+	/*  GALLERY  */
+
+	.gallery2 {
+	margin-bottom: 40px;
+	}
+	
+	.hidden_img {
+	
+		.layer {
+			div {
+				i {
+					color: white;
+					line-height: 15px;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+
+/* TEAM  */
+	.team {
+		padding: 0 60px;
+		figure {
+			text-align: center;
+			&:nth-child(2) {
+				padding-bottom: 20px;
+			}
+			&:nth-child(1) {
+    		padding-bottom: 20px;
+			}
+		}
+	}
+	
+	.hidden_img2 {
+	
+	width: 140px;
+	max-height: 140px;
+	margin: 0 auto;
+		img {
+			max-width: 140px;
+			max-height: 140px;
+			line-height: 140px;
+		}
+		.layer2 {
+			position: absolute;
+			left: 0;
+			top: 0;	
+			width: 140px;
+			height: 140px;
+			line-height: 140px;
+		}
+	} 
+
+/*  AWSOME TITLE  */
+
+	.awsome_title {
+		.container {
+			height: auto;
+			overflow: visible;
+		}
+		figure {
+			float: none;
+			margin: 0 auto;
+			width: 80%;
+			height: 350px;
+			overflow: hidden;
+		}
+		img {
+			width: auto;
+			height: 100vh;
+			object-fit: cover;
+		}
+		.col-8 {
+			text-align: justify;
+		}
+		div {
+		float: none;
+		text-align: justify;
+		margin-top: 10px;
+		}
+		.col-12-sm {
+			h2 {
+				text-align: center;
+			}
+		}
+		.two_columns {
+		column-count: 1;
+		}	
+	}
+
+	.team div + p {
+	font-size: 15px;
+	}
+
+/*  NUMBERS  */
+
+	.numbers {
+	padding: 0 40px;
+		.col-3 {
+			 div {
+			font-size: 33px;
+			}
+		}
+		h3 {
+			font-size: 14px;
+		}
+	}
+
+/*  FOOTER  */
+
+	footer{
+		.row {
+			.col-sm-12 {
+				margin: 15px auto;
+			}
+		}
+		a {
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+		}
+	}
+	
+	.about_us, .get_in_touch, .soc_media {
+	padding: 0 50px;
+	}
+}
+}

@@ -1,0 +1,407 @@
+/* GLOBAL variables */
+
+$font: 'Allerta Stencil', sans-serif;
+$headerHeight: 70px;
+$background: #5B0000;
+$greenhover: #007E00;
+$navLinkHoverColor: #ff0704;
+$textColor1: white;
+
+/* global mixins */
+
+@mixin cssReset {
+	margin: 0;
+ 	padding: 0;
+ 	box-sizing: border-box;
+ 	text-decoration: none;
+ }
+
+@mixin textCenter {
+	text-align: center;
+}
+
+@mixin textUppercase {
+	text-transform: uppercase;
+}
+
+@mixin imgResponsive {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+/*------------------------------*/
+ 
+@import 'partial3';
+@import 'partial';
+@import 'partial1';
+@import 'partial2';
+	
+* {
+	@include cssReset;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+/*  GRID  */
+
+		/*  GENERAL PROPERTIES OF GRID'S COLUMNS  */
+		
+[class^="col-"] {
+	float: left;
+}
+
+		/* CLEARING FLOATS */
+		
+.row::after, .row::before {
+  content: "";
+  display: table; /* DISABLE MARGIN COLLAPSING */
+  clear: both;
+}
+	
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+section >.container {
+	margin: 80px auto;
+	@include textCenter;
+}
+
+h2 {
+	font-size: 30px;
+	@include textUppercase;
+	padding-bottom: 20px;
+}
+
+/*  HEADER */
+
+.logo {
+	height: $headerHeight;
+	margin-left: 30px;	
+}
+
+header {
+	background-color: $background;
+	height: $headerHeight;
+	nav {
+		ul {
+			float: right;
+			list-style-type: none;
+			@include textCenter;
+			li {
+				display: inline-block;
+				a {
+					display: block;
+					height: $headerHeight;
+					line-height: $headerHeight;
+					padding: 0 20px;
+					font-size: 16px;
+					font-weight: bold;
+					color: $textColor1;
+					text-transform: uppercase;
+					text-shadow: 2px 1px black;
+					&:hover {
+						color: $navLinkHoverColor;}
+				}
+			}
+		}
+	}	
+}
+
+/*  HERO  */
+
+.hero {
+	height: 90vh;
+	background: url("https://i.imgur.com/6zG9ha2.jpg");
+	background-size: cover;
+	margin: 0 auto;
+	h1 {
+		width: 50vw;
+		height: 180px;
+		display: inline-block;
+		float: right;
+		background-color: rgba(48, 184, 48, 0.7);
+		font-family: 'Allerta Stencil', sans-serif;
+		color: $textColor1;
+		@include textCenter;
+		@include textUppercase;
+		font-size: 40px;
+		text-shadow: 2px 1px black;
+		margin-top: 100px;
+		padding: 60px 40px 0 30px;
+		border-right: 20px solid #004900;
+		span {
+			font-weight: bold;
+		}
+	}	
+}
+
+/* THREE ICONS SECTION */
+	
+.icon-3 {
+	padding: 0 80px;
+	a {
+		text-decoration: none;
+		&:hover h3 {
+			color: #007E00;
+		}
+		&:hover i {
+			background-color: #007E00;
+		}
+		i {
+			display: inline-block;
+			color: white;
+			font-size: 50px;
+			font-weight: bold;
+			background-color: #03CC03;
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			border-radius: 15px;
+			box-shadow: 4px 4px 5px #007E00;
+			cursor: pointer;
+			transition: background-color 0.5s ease-in-out;
+		}
+	}
+	h3 {
+		text-transform: uppercase;
+		font-size: 18px;
+		color: black;
+		padding: 20px 0;
+		transition: color 0.5s ease-in-out;	
+	}
+}
+
+/* FEATURED WORKS  */
+$hiddenImgHeight: 190px;
+@mixin hiddenIconsDimensions {
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+}
+
+
+.feat_works {
+
+	padding: 0 200px;
+}
+
+/*  GALLERY  */
+
+.gallery2 {
+	margin-bottom: 80px;
+}
+
+.hidden_img {
+	position: relative;
+	height: $hiddenImgHeight;
+	overflow: hidden;
+	&:hover .layer {
+		background: rgba(0, 0, 0, .5);
+			i {
+				visibility: visible;
+				color: white;
+			}
+	}
+	img {
+		@include imgResponsive;
+	}
+	.layer {
+		position: absolute;
+		width: 100%;
+		height: $hiddenImgHeight;
+		line-height: $hiddenImgHeight;
+		text-align: center;
+		left: 0;
+		top: 0;
+		transition: background 0.3s ease-in-out;
+		transition: visibility 0.3s ease-out;
+		transition: color 0.3s ease-out;
+		div {
+			i {
+				display: inline-block;
+				text-align: center;
+				font-size: 20px;
+				color: black;
+				@include hiddenIconsDimensions;
+				visibility: hidden;
+			}
+			.fa-search {
+				margin-left: 15px;
+			}
+		}
+	}
+}
+
+/* TEAM */
+
+@mixin teamDimensions {
+	max-width: 180px;
+	max-height: 180px;
+	line-height: 180px;
+}
+
+.team {
+	padding: 0 60px;
+	figure {
+		text-align: center;
+	}
+}
+
+.hidden_img2 {
+	position: relative;
+	&:hover .layer2 {
+		visibility: visible;
+		background: rgba(0, 0, 0, .5);
+		opacity: 1;
+	}
+	img {
+		display: block;
+		@include teamDimensions;
+		border-radius: 50%;
+		margin: 0 auto;
+	}
+	.layer2 {
+		position: absolute;
+		left:45px;
+		top: 0;
+		display: inline-block;
+		width: 180px;
+		height: 180px;
+		line-height: 180px;
+		text-align: center;
+		border-radius: 50%;
+		color: white;
+		transition: .3s ease-in-out;
+		opacity: 0;
+	}
+	
+}
+
+/*  AWSOME TITLE  */
+
+.awsome_title {
+	
+	background: url("https://i.imgur.com/7u15kHT.jpg");
+	background-size: cover;
+
+	.container {
+	padding: 30px 50px;
+	height: 420px;
+	overflow: hidden;
+	}
+	.col-8 {
+		text-align: left;
+		padding: 0 50px;
+	} 
+	figure {
+		border-top: 30px solid #5B0000;
+		border-left: 30px solid #5B0000;
+		border-right: 30px solid #5B0000;
+		border-radius: 15px 15px 0 0;
+		box-shadow: 3px 3px 3px grey;
+		line-height: 0px;
+		
+		img {
+			width: 100%;
+		}
+	}
+	.two_columns {
+		column-count: 2;
+		text-align: left;
+	}
+}
+
+.team div + p {
+	display: inline-block;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	
+}
+
+/*  NUMBERS  */
+
+.numbers {
+	padding: 0 140px;
+	 .col-3 {
+	 	div {
+			font-family: 'Allerta Stencil', sans-serif;
+			font-size: 60px;
+			font-weight: bold;
+		}
+	}
+	h3 {
+		text-transform: uppercase;
+	}
+	a {
+		color: #007E00;
+		cursor: pointer;
+	}
+}
+
+/*  FOOTER  */
+@mixin footerLinkDimensions {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+}
+
+footer {
+	background-color: #5B0000 ;
+	color: white;
+	.container {
+	padding: 30px 0;
+	}
+	h3 {
+		padding-bottom: 20px;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-shadow: 2px 2px 2px #1A0000;
+	}
+	a {
+		color: black;
+		display: inline-block;
+		@include footerLinkDimensions;
+		text-align: center;
+		background-color: white;
+		transition: 0.4s ease-in-out;
+		&:hover {
+			color: white;
+			background-color: #ff0704;
+		}
+	}
+}
+
+footer>p {
+	background-color: #1A0000;
+	text-align: center;
+	padding: 5px 0;
+}
+
+.about_us, .get_in_touch, .soc_media {
+	padding: 0 40px;
+}
+.get_in_touch div:not(:last-child) {
+	padding-bottom: 5px;
+}
+
+.soc_media {
+	p {
+		padding-bottom: 5px;
+	}
+}
+
+/*  MEDIA QUERY */
+
+@include mediaQuery1119-768;
+@include mediaQuery767_479;
+@include mediaQuery478;
+
