@@ -1,1 +1,1 @@
-https://github.com/malgorzatakapuscinska/SASS_6_2
+https://malgorzatakapuscinska.github.io/SASS_6_2/
